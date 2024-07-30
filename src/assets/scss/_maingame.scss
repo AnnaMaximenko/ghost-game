@@ -1,0 +1,78 @@
+@keyframes appear {
+  from {
+    top: -100vh;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.game {
+  counter-reset: count;
+
+  &__block {
+    background-image: url(../img/back.jpg);
+    height: 100vh;
+  }
+  &__ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.ghost-check:checked {
+  counter-increment: count;
+}
+
+.ghost-check:checked ~ label {
+  display: none;
+} /*# sourceMappingURL=style.css.map */
+.counte-info {
+  font-size: 60px;
+  color: aliceblue;
+  &::after {
+    content: counter(count);
+  }
+}
+.ghost-1 {
+  animation: duck-fly-1 5s ease-in 1.7s both;
+}
+
+.ghost-check {
+  position: absolute;
+  visibility: hidden;
+  left: -9999999999px;
+}
+
+.game-over {
+  padding-top: 70px;
+  padding-bottom: 130px;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: white;
+  pointer-events: all;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 200;
+  animation: appear 0.25s forwards;
+  animation-delay: 10s;
+  background: $colorMain;
+  @include ColumnCenter(0px);
+  &__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 44%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $colorText;
+  }
+  &__title_up {
+    margin-bottom: 40px;
+  }
+  &__title_down {
+    margin-bottom: 69px;
+  }
+}

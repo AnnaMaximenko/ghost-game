@@ -1,0 +1,32 @@
+.hello {
+  padding-top: 70px;
+  padding-bottom: 130px;
+  @include ColumnCenter(20px);
+  &__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 44%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $colorText;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 190%;
+    text-align: center;
+    color: $colorTextTwo;
+  }
+  &__link {
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 70%;
+    text-align: center;
+    padding: 20px 39px;
+    border-radius: 100%;
+  }
+  &__img {
+    height: 300px;
+  }
+}
